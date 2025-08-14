@@ -1,0 +1,46 @@
+# -------------------------
+# OS / Editor junk files
+# -------------------------
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+._*
+*.swp
+*.swo
+*.bak
+*.tmp
+*.log
+
+# -------------------------
+# Node / Composer vendors (if using builds)
+# -------------------------
+node_modules/
+vendor/
+composer.lock
+package-lock.json
+yarn.lock
+
+# -------------------------
+# WordPress specific
+# -------------------------
+wp-content/uploads/
+wp-content/cache/
+wp-content/backups/
+
+# -------------------------
+# Translation compiled files
+# -------------------------
+*.mo
+
+# -------------------------
+# Archives
+# -------------------------
+*.zip
+
+# -------------------------
+# IDE specific
+# -------------------------
+.idea/
+.vscode/
+*.code-workspace

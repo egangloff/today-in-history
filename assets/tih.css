@@ -1,0 +1,25 @@
+/* Basic styling + theme support */
+.tih { margin: .5rem 0; }
+.tih-title { margin: 0 0 .5rem 0; font-weight: 600; }
+.tih-list { list-style: none; padding: 0; margin: 0; }
+.tih-item { margin: .45rem 0; padding: .55rem .65rem; border-left: 4px solid #6366f1; border-radius: 4px; }
+.tih-year { display: inline-block; min-width: 4.5rem; font-weight: 600; }
+.tih-link { margin-left: .4rem; text-decoration: none; }
+
+/* Light theme */
+.tih-theme-light .tih-item { background: #f8fafc; color: #0f172a; }
+.tih-theme-light .tih-link { color: #4338ca; }
+
+/* Dark theme */
+.tih-theme-dark .tih-item { background: #0f172a; color: #e2e8f0; border-left-color: #818cf8; }
+.tih-theme-dark .tih-link { color: #a5b4fc; }
+
+/* Auto (follow system) */
+@media (prefers-color-scheme: dark) {
+  .tih-theme-auto .tih-item { background: #0f172a; color: #e2e8f0; border-left-color: #818cf8; }
+  .tih-theme-auto .tih-link { color: #a5b4fc; }
+}
+@media (prefers-color-scheme: light) {
+  .tih-theme-auto .tih-item { background: #f8fafc; color: #0f172a; border-left-color: #6366f1; }
+  .tih-theme-auto .tih-link { color: #4338ca; }
+}

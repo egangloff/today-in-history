@@ -21,14 +21,14 @@ class TIH_Shortcode {
 
     $data = TIH_API::get_data($type, $month, $day);
     if (!$data) {
-      return '<div class="tih">'. esc_html__('No data available for this date.', 'today-in-history') .'</div>';
+      return '<div class="tih">'. esc_html__('No data available for this date.', 'today-x-history') .'</div>';
     }
 
     $items = array_slice($data['items'], 0, $limit);
 
-    $type_label = _x('Events', 'type label', 'today-in-history');
-    if ($type === 'births') $type_label = _x('Births', 'type label', 'today-in-history');
-    if ($type === 'deaths') $type_label = _x('Deaths', 'type label', 'today-in-history');
+    $type_label = _x('Events', 'type label', 'today-x-history');
+    if ($type === 'births') $type_label = _x('Births', 'type label', 'today-x-history');
+    if ($type === 'deaths') $type_label = _x('Deaths', 'type label', 'today-x-history');
 
     // Theme option
     $theme = get_option('tih_theme', 'auto'); // auto|light|dark
@@ -41,7 +41,7 @@ class TIH_Shortcode {
       <h3 class="tih-title">
         <?php
           /* translators: %1$s: formatted date (e.g. August 14), %2$s: category (Events/Births/Deaths) */
-          printf(esc_html__('Today in History — %1$s (%2$s)', 'today-in-history'),
+          printf(esc_html__('Today in History — %1$s (%2$s)', 'today-x-history'),
             esc_html($data['date']),
             esc_html($type_label)
           );
@@ -54,7 +54,7 @@ class TIH_Shortcode {
             <span class="tih-desc"><?php echo esc_html($it['description']); ?></span>
             <?php if (!empty($it['wiki'])): ?>
               <a class="tih-link" href="<?php echo esc_url($it['wiki']); ?>" target="_blank" rel="noopener">
-                <?php echo esc_html_x('[Wiki]', 'external link label', 'today-in-history'); ?>
+                <?php echo esc_html_x('[Wiki]', 'external link label', 'today-x-history'); ?>
               </a>
             <?php endif; ?>
           </li>

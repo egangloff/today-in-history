@@ -1,11 +1,12 @@
 <?php
 /**
- * Plugin Name: TodayInHistory
- * Description: Display historical events, births, and deaths for a given date (defaults to today) using the "On This Day" API from byabbe.se. Includes shortcode + Gutenberg block, with server-side caching and settings.
+ * Plugin Name: Today X History
+ * Description: Display historical events, births, and deaths for a given date (defaults to today) using the "On This Day" API (byabbe.se). Shortcode + block, with server-side caching.
  * Version: 1.1.0
  * Author: SaiyanWeb
- * Update URI: false
- * Text Domain: today-in-history
+ * License: GPL-2.0-or-later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain: today-x-history
  * Domain Path: /languages
  */
 
@@ -13,11 +14,6 @@ if (!defined('ABSPATH')) exit;
 
 define('TIH_DIR', plugin_dir_path(__FILE__));
 define('TIH_URL', plugin_dir_url(__FILE__));
-
-function tih_load_textdomain() {
-  load_plugin_textdomain('today-in-history', false, dirname(plugin_basename(__FILE__)) . '/languages/');
-}
-add_action('plugins_loaded', 'tih_load_textdomain');
 
 require_once TIH_DIR . 'includes/class-tih-api.php';
 require_once TIH_DIR . 'includes/class-tih-shortcode.php';

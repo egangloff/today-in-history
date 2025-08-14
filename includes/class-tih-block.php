@@ -20,8 +20,8 @@ class TIH_Block {
         'day'   => ['type'=>'number', 'default'=>0],
         'limit' => ['type'=>'number', 'default'=>10],
       ],
-      'title'       => __('Today In History', 'today-in-history'),
-      'description' => __('Display historical events, births, or deaths for a given date.', 'today-in-history'),
+      'title'       => __('Today In History', 'today-x-history'),
+      'description' => __('Display historical events, births, or deaths for a given date.', 'today-x-history'),
       'category'    => 'widgets',
       'icon'        => 'calendar-alt',
     ]);

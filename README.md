@@ -1,56 +1,65 @@
-# 📅 TodayInHistory – WordPress Plugin
+=== Today X History ===
+Contributors: saiyanweb
+Donate link: 
+Tags: history, events, shortcode, block, widget
+Requires at least: 5.0
+Tested up to: 6.8
+Requires PHP: 7.4
+Stable tag: 1.1.0
+License: GPLv2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-[![WordPress](https://img.shields.io/badge/WordPress-%3E=5.0-blue)](https://wordpress.org/)  
-[![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/gpl-2.0.html)  
-[![PHP](https://img.shields.io/badge/PHP-%3E=7.4-777BB4)](https://www.php.net/)
+Display historical events, notable births and deaths for a given date (defaults to today). Shortcode + Gutenberg block, with server-side caching.
 
-**TodayInHistory** is a WordPress plugin that displays historical events, notable births, and deaths for a given date (defaults to today).  
-It uses the public **"On This Day" API** provided by [byabbe.se](https://byabbe.se/on-this-day/), with server-side caching and customizable settings.
+== Description ==
 
----
+Today X History is a WordPress plugin that shows historical events, births, and deaths for any date (defaults to today).  
+Data source: the public "On This Day" API by byabbe.se (event descriptions are provided in English).  
+The plugin interface and labels are translatable via standard WordPress `.po/.mo` files.
 
-## ✨ Features
-- **Shortcode & Gutenberg Block** support  
-- Displays:  
-  - 🗓 Historical events  
-  - 👶 Notable births  
-  - ⚰ Notable deaths  
-- **Server-side caching** to reduce API calls  
-- Light/Dark/Auto theme support  
-- Translatable interface (`.po/.mo` files)  
-- Works with **any WordPress theme**
+**Features**
+- Shortcode and Gutenberg Block
+- Events, Births, Deaths
+- Server-side caching (configurable TTL)
+- Light/Dark/Auto theme
+- Works with any theme
 
----
+**Shortcode Examples**
+- `[tih]` — today’s events  
+- `[tih type="births" limit="5"]` — 5 births for today  
+- `[tih type="deaths" month="8" day="14"]` — deaths for August 14  
+- Parameters: `type` (`events|births|deaths`), `limit` (int), `month` (1–12), `day` (1–31)
 
-## 🔌 Shortcode Examples
+**Note on translations**
+- Interface strings are translatable
+- Historical descriptions come from the API and are in English
 
-Here are several ways you can use the `[tih]` shortcode in your posts, pages, or widgets.
+== Installation ==
 
-[tih]
-→ Displays today’s events (default type: events).
+1. Upload the plugin folder to `/wp-content/plugins/` or install the ZIP via **Plugins → Add New**.  
+2. Activate the plugin.  
+3. Optionally, go to **Settings → TodayInHistory** to configure cache TTL and theme.  
+4. Insert the shortcode on a page or post (examples above).
 
-[tih type="births"]
-→ Displays all notable births for today.
+== Frequently Asked Questions ==
 
-[tih type="births" limit="5"]
-→ Displays the 5 most recent notable births for today.
+= Can I change the language of the event texts? =  
+Interface labels can be translated via `.po/.mo`. Event texts are provided by the API in English.
 
-[tih type="deaths" month="8" day="14"]
-→ Displays notable deaths for August 14 (any year).
+= Does this work with caching plugins/CDNs? =  
+Yes. The plugin implements its own server-side cache to minimize API calls.
 
-[tih type="events" month="12" day="25" limit="3"]
-→ Displays the 3 most recent events for December 25 (any year).
+== Screenshots ==
 
-[tih type="events" limit="10" month="1" day="1"]
-→ Displays 10 historical events that happened on January 1st.
+1. Frontend display  
+2. Settings page (cache, theme, usage)
 
-[tih type="births" month="5" day="20" limit="8"]
-→ Displays 8 notable births for May 20.
+== Changelog ==
 
-[tih type="deaths" limit="2"]
-→ Displays only the 2 most recent deaths for today.
+= 1.1.0 =
+* Initial public release.
 
-[tih type="events" limit="3"]
-[tih type="births" limit="3"]
-[tih type="deaths" limit="3"]
-→ Displays 3 events, 3 births, and 3 deaths for today (side by side).
+== Upgrade Notice ==
+
+= 1.1.0 =
+First public release.
